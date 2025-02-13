@@ -25,13 +25,13 @@ function verificarChute() {
         exibirTextoNaTela('h1', 'Acertou!!');
         let palavraTentativas = tentativas > 1 ? 'tentativas' : 'tentativa';
         let mensagemTentativa = `Voce acertou com ${tentativas} ${palavraTentativas} `;
-        exibirTextoNaTela('p', tentativas);
+        exibirTextoNaTela('p', mensagemTentativa);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (chute > numeroSecreto) {
             exibirTextoNaTela('p', 'o numero secreto e menor');
         } else {
-            exibirTextoNaTela('p', 'o numero secreto e menor');
+            exibirTextoNaTela('p', 'o numero secreto e maior');
         }
         tentativas++;
         limparCampo();
@@ -69,5 +69,5 @@ function reiniciarJogo() {
     limparCampo();
     tentativas = 1;
     exibirMensagemInicial();
-    document.getElementById('reinicar').setAttribute('disabled', true);
+    document.getElementById('reiniciar').setAttribute('disabled', true);
 }
